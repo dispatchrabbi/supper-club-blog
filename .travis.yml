@@ -1,0 +1,22 @@
+language: node_js
+node_js:
+  - "node"
+# only run Travis on commits from these branches
+branches:
+  only:
+  - master
+
+script: npm run build
+
+deploy:
+  skip_cleanup: true
+  provider: s3
+  access_key_id: AKIAIE7MTMASXPDVXJEA
+  secret_access_key:
+    secure: NFPYaYDy3OnkCWKVhNrrf5MFTXRDN6cms2xk/joYgTXqd7mDQDiVjY16WENF338Uk572bFSU6PYUw8YH3LICxHF32HcA1gCVfh2SDa+3/Z0iMNW3bA6jOUWL2sT0SFPr84iuXDcEvle+4tQgbr51t0hwg+cmVzqroLTEX9MccDuCJEYTpA8cK5rb7FYgHDJosi5dnA5PcvM75nUEG/qpoOjcgCQTSWd33eJNu7I/9rOf8xvMjkg9nJJjIlHsSna4ANTQPLhlWLTRJruRfJ1EtSMSosGj8Form4BuvQbCu3tvQ4YS08r4g5MEu6d9lkcxMi08gYgvKqk4D2zwkf5+wZfRbDrb73riKh/RqeSz8GNrbRkko6rXXqGtIyl+4xTh8YArQ86LDWaH2yTvdoVKrFlWljjrfGN8h3ArNOoV7fDaP6lfMyC6W75wAhCilTwQg1idvfy/2Z+SC9imvsDKdnLrWqWUZcGJNzQWVEdBMNVsVm/Y1LRb+h7lXuNQ2jT1cTwGOKNTKPEmN+ztuBMLdAO9kLHNF9h/IUmJBxierv9d0hieBxzP7f+DJRk7ttuzSnptymzm8Wvqd8bKIvq5CtTgReHZvgtx8yRZa0lRRJX3nHC/ZI+6eMoKucOhU8c7p79zRNkpMIRbbDzG4cC3TDiOwpPdP0IJ/lekw3/MYfE=
+  bucket: supperclub.report
+  region: us-west-2
+  local-dir: dist
+  on:
+    repo: dispatchrabbi/supper-club-blog
+    all_branches: true
