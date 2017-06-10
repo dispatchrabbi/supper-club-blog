@@ -5,7 +5,6 @@ node_js:
 branches:
   only:
   - master
-  - site-dev
 
 script: npm run build
 
