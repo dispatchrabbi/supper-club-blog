@@ -10,6 +10,7 @@ branches:
 script: npm run build
 
 deploy:
+  skip_cleanup: true
   provider: s3
   access_key_id: AKIAIE7MTMASXPDVXJEA
   secret_access_key:
