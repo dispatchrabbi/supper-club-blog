@@ -1,4 +1,6 @@
 language: node_js
+node_js:
+  - "node"
 # only run Travis on commits from these branches
 branches:
   only:
