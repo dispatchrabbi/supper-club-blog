@@ -17,3 +17,6 @@ deploy:
   bucket: supperclub.report
   region: us-west-2
   local-dir: dist
+  on:
+    repo: dispatchrabbi/supper-club-blog
+    all_branches: true
