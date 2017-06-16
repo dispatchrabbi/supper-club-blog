@@ -4,10 +4,13 @@
 
 @import "../../node_modules/normalize.css/normalize";
 
-// 2. Project-wide pre-reqs (e.g., variables)
+// 2. Site-wide CSS
+@import "variables";
+@import "base";
 
-// 3. Site-wide CSS
+// 3. Component-based CSS
 @import "page";
+@import "page-header";
 @import "nav";
 @import "footer";
 
