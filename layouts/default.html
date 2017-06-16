@@ -1,20 +1,10 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="UTF-8" />
-  <title>{{ blogTitle }}</title>
-  <meta name="description" content="{{ description }}">
-</head>
-<body>
-  <header>
-    <h1>{{ blogTitle }}</h1>
-  </header>
-  <main>
-    <h2>{{ title }}X</h2>
-    {{{ contents }}}
-  </main>
-  <footer>
-    And that's all.
-  </footer>
-</body>
-</html>
+{{#>page}}
+{{> hero }}
+<main>
+  {{> excerpt }}
+  {{> excerpt }}
+</main>
+<aside>
+  {{> restaurant-list }}
+</aside>
+{{/page}}

@@ -1,0 +1,16 @@
+#page {
+  > .hero {
+    @include grid-column(12);
+    position: relative;
+    height: 400px;
+    background-size: cover;
+  }
+
+  > main {
+    @include grid-column(9);
+  }
+
+  > aside {
+    @include grid-column(3);
+  }
+}
