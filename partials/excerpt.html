@@ -1,11 +1,10 @@
-{{log this}}
 <div class="post-excerpt">
   <header>
-    <h2>{{title}}</h2>
-    <h3>{{formatDate date}}</h3>
+    <h2>{{attributes.title}}</h2>
+    <h3>{{formatDate attributes.date}}</h3>
   </header>
-  <article>{{excerpt contents}}</article>
+  <article>{{excerpt htmlContent}}</article>
   <div class="read-more">
-    <a href="/{{path}}">Continue reading</a>
+    <a href="/{{dstpath}}">Continue reading</a>
   </div>
 </div>

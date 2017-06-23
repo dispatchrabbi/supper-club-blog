@@ -24,6 +24,7 @@
   "dependencies": {
     "bourbon": "^4.3.4",
     "bourbon-neat": "^2.0.0",
+    "cpy": "^5.0.0",
     "del": "^3.0.0",
     "front-matter": "^2.1.2",
     "globby": "^6.1.0",
