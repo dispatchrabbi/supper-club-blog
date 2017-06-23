@@ -1,13 +1,12 @@
+{{log this}}
 <div class="post-excerpt">
   <header>
-    <h2>Tall Cheval</h2>
-    <h3>Frabjuary 33, 2118</h3>
+    <h2>{{title}}</h2>
+    <h3>{{formatDate date}}</h3>
   </header>
-  <article>
-    <p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p>
-    <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
-  </article>
+  {{timeout .}}
+  <article>{{excerpt contents}}</article>
   <div class="read-more">
-    <a href="/posts/tall-cheval">Continue reading</a>
+    <a href="/{{path}}">Continue reading</a>
   </div>
 </div>
