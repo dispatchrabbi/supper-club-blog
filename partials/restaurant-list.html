@@ -3,17 +3,8 @@
     <h2>On our list</h2>
   </header>
   <ul>
-    <li>Food and Stools</li>
-    <li>Soupçon of Bouge</li>
-    <li>Cook It Yourself</li>
-    <li>Spatialis</li>
-    <li>Republican Anchor</li>
-    <li>Winter Hut</li>
-    <li>Baleen</li>
-    <li>Nailwood</li>
-    <li>Le Tour Argent</li>
-    <li>Bluejay</li>
-    <li>Oishii Sushi</li>
-    <li>Mo's</li>
+    {{#each restaurantsToVisit}}
+    <li><a href="{{website}}">{{name}}</a></li>
+    {{/each}}
   </ul>
 <div>
