@@ -2,6 +2,7 @@ const promisify = require('util').promisify;
 
 const makeDir = require('make-dir'); // already as promised
 const del = require('del'); // already as promised
+const writeFile = promisify(require('fs').writeFile);
 
 const sass = require('node-sass');
 const renderSass = promisify(sass.render);
@@ -35,15 +36,18 @@ async function build() {
   // Deposit those files the destination folder
 
   // Compile SCSS into CSS and deposit those files in the destination folder
-  // await renderSass({
-  //   file: SRCDIR + 'styles/main.scss',
-  //   includePaths: [].concat(bourbon.includePaths, neat.includePaths),
-  //   outputDir: DESTDIR + 'styles/',
-  //   outputStyle: 'nested',
-  //   sourceMap: true,
-  //   sourceMapContents: true,
-  //   sourceComments: true,
-  // });
+  const CSSDIR = DESTDIR + 'styles/';
+  await makeDir(CSSDIR);
+  const sassResult = await renderSass({
+    file: SRCDIR + 'styles/main.scss',
+    includePaths: [].concat(bourbon.includePaths, neat.includePaths),
+    outFile: CSSDIR + 'main.css',
+    outputStyle: 'nested',
+    sourceMap: true,
+    sourceMapContents: true,
+  });
+  await writeFile(CSSDIR + 'main.css', sassResult.css);
+  await writeFile(CSSDIR + 'main.css.map', sassResult.map);
 }
 
 build();
