@@ -25,6 +25,8 @@
     "bourbon": "^4.3.4",
     "bourbon-neat": "^2.0.0",
     "del": "^3.0.0",
+    "front-matter": "^2.1.2",
+    "globby": "^6.1.0",
     "handlebars": "^4.0.10",
     "make-dir": "^1.0.0",
     "marked": "^0.3.6",

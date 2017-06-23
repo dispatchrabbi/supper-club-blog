@@ -1,8 +1,15 @@
 const promisify = require('util').promisify;
 
+const globby = require('globby');
 const makeDir = require('make-dir'); // already as promised
 const del = require('del'); // already as promised
 const writeFile = promisify(require('fs').writeFile);
+const readFile = promisify(require('fs').readFile);
+
+const frontMatter = require('front-matter');
+const marked = require('marked');
+
+const objectFromEntries = require('./lib/object-from-entries.js');
 
 const sass = require('node-sass');
 const renderSass = promisify(sass.render);
@@ -12,7 +19,7 @@ const neat = require('bourbon-neat');
 const SRCDIR = './src/';
 const DESTDIR = './dist/';
 
-// TODO: drafts and collections
+// TODO: drafts, collections, permalinks
 // TODO: logging/debugging
 async function build() {
   // Get the metadata in order
@@ -24,7 +31,19 @@ async function build() {
   // Remake the destination folder
   await makeDir(DESTDIR);
 
-  // Parse the content in all the source files from markdown into HTML
+  // Parse the content in all the source files from markdown into HTML, with front-matter included
+  const srcPaths = await globby('**/*.md', { cwd: SRCDIR });
+  const srcFiles = await Promise.all(srcPaths.map(async function(path) {
+    const rawContent = await readFile(SRCDIR + path);
+    const mdContent = rawContent.toString();
+    const withFrontMatter = frontMatter(mdContent);
+    const fileInfo = {
+      path: path, // TODO: change this from .md to .html
+      attributes: withFrontMatter.attributes,
+      body: marked(withFrontMatter.body),
+    };
+    return [path, fileInfo];
+  })).then(objectFromEntries);
 
   // Register Handlebar helpers
   // const Handlebars = require('handlebars');
