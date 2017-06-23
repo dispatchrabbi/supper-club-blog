@@ -2,6 +2,7 @@ const clean = require('./lib/build/clean.js');
 const prepHandlebars = require('./lib/build/prep-handlebars.js');
 const compileLayouts = require('./lib/build/compile-layouts.js');
 const parseSourceFiles = require('./lib/build/parse-source-files.js');
+const removeDrafts = require('./lib/build/remove-drafts.js');
 const composeSourceAndLayouts = require('./lib/build/compose-source-and-layouts.js');
 const writeFiles = require('./lib/build/write-files.js');
 const compileStyles = require('./lib/build/compile-styles.js');
@@ -12,7 +13,7 @@ const metadata = require('./metadata/metadata.js');
 const SRCDIR = './src/';
 const DESTDIR = './dist/';
 
-// TODO: drafts, collections, permalinks
+// TODO: collections, permalinks
 // TODO: logging/debugging
 async function build() {
   await clean(DESTDIR);
@@ -32,7 +33,7 @@ async function build() {
   });
 
   const finalFiles = composeSourceAndLayouts({
-    sourceFiles,
+    sourceFiles: removeDrafts(sourceFiles),
     layouts,
     metadata,
   });
