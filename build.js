@@ -5,6 +5,7 @@ const parseSourceFiles = require('./lib/build/parse-source-files.js');
 const collectCollections = require('./lib/build/collect-collections.js');
 const removeDrafts = require('./lib/build/remove-drafts.js');
 const composeSourceAndLayouts = require('./lib/build/compose-source-and-layouts.js');
+const { fancifyUrls } = require('./lib/build/fancify-urls.js');
 const writeFiles = require('./lib/build/write-files.js');
 const compileStyles = require('./lib/build/compile-styles.js');
 const copyOtherFiles = require('./lib/build/copy-other-files.js');
@@ -15,7 +16,6 @@ const metadata = require('./metadata/metadata.js');
 const SRCDIR = './src/';
 const DESTDIR = './dist/';
 
-// TODO: permalinks
 // TODO: logging/debugging
 async function build() {
   await clean(DESTDIR);
@@ -37,7 +37,7 @@ async function build() {
     sourceDir: SRCDIR,
   });
 
-  const POSTS_REGEX = /posts/;
+  const POSTS_REGEX = /^posts\//;
   const collections = collectCollections({
     sourceFiles,
     patterns: [{
@@ -50,11 +50,12 @@ async function build() {
   Object.assign(metadata, {collections});
 
   // Smash layout templates and source pages together to make actual pages
-  const finalFiles = composeSourceAndLayouts({
+  // And also fancify the URLs so they look nice on the URL bar
+  const finalFiles = fancifyUrls(composeSourceAndLayouts({
     sourceFiles: removeDrafts(sourceFiles),
     layouts,
     metadata,
-  });
+  }));
 
   // Write the smashed files to the destination directory
   await writeFiles({
