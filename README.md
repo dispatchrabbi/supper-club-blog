@@ -3,8 +3,7 @@ https://supperclub.report
 
 ## Getting started
 
-This is a static site built using [Metalsmith](https://github.com/segmentio/metalsmith), which runs in Node. That means
-we're doing pretty standard Node-y stuff to get up and running.
+This is a static site built using Node. (And all the build steps are homegrown!) That means we're doing pretty standard Node-y stuff to get up and running.
 
 ```sh
 $ git clone git@github.com:dispatchrabbi/supper-club-blog.git
@@ -22,8 +21,13 @@ Just run:
 $ npm run build
 ```
 
-This will run Metalsmith on the files in _src/_ using the configuration info in _metalsmith-config.js_, depositing the
-built files in _dist/_.
+This will run a whole bunch of transformations on the files in _src/_ , depositing the built files in _dist/_. The build process is encapsulated in _build.js_, and all the steps have files in _lib/build/_.
+
+You can build the site with drafts using:
+
+```sh
+$ npm run build:drafts
+```
 
 ### Cleaning built files out
 
@@ -41,19 +45,18 @@ The best way to work on the site itself is:
 $ npm run dev
 ```
 
-This will watch the _src/_ and _layouts/_ directories (`npm run watch`) and run a build when anything changes. It will
-also simultaneously set up a web server (`npm run serve`) at <http://localhost:8888> that serves out of _dist/_ so you
-can see your changes.
+This will watch the _src/_ and _layouts/_ directories (`npm run watch`) and run a build when anything changes. It will also simultaneously set up a web server (`npm run serve`) at <http://localhost:8888> that serves out of _dist/_ so you can see your changes.
 
 ## Writing blog posts
 
-...We'll figure out the specifics later, but it's going to involve putting a Markdown file in _src/posts/_ and putting
-the right metadata in the front-matter. You'll want the file to look something like this:
+...We'll figure out the specifics later, but it's going to involve putting a Markdown file in _src/posts/_ and putting the right metadata in the front-matter. You'll want the file to look something like this:
 
 ```markdown
 ---
-title: Sarkis
+title: Loretta Believe It!
+restaurant: Sarkis
 date: 2017-06-04
+layout: post.html
 draft: true
 ---
 This restaurant was *awesome*. Let me tell you just how awesome it was.
