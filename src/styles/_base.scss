@@ -1,0 +1,33 @@
+body {
+  font-family: $body-font;
+
+  background-color: $black;
+  color: $white;
+}
+
+header {
+  font-family: $header-font;
+  font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 modular-scale(-5) 0;
+
+  &:last-child {
+    margin: 0;
+  }
+}
+
+h1 { font-size: modular-scale(3); }
+h2 { font-size: modular-scale(2); }
+h3 { font-size: modular-scale(1); }
+h4, h5, h6 { font-size: modular-scale(0); }
+
+a, a:link, a:visited {
+  color: $gold;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

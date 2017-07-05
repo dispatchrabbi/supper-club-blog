@@ -1,0 +1,34 @@
+{{#>page}}
+<main class="no-sidebar">
+  <header>
+    <h2>{{title}}</h2>
+  </header>
+  <article>
+    {{{contents}}}
+    <div class="posts-by-date">
+      <header>
+        <h3>By Date</h3>
+      </header>
+      <ul>
+        {{#sortList collections.posts 'attributes.date' reverse=true}}
+        {{#each .}}
+        <li><a href="{{postUrl slug}}">{{formatDate attributes.date}} - {{attributes.title}}</a></li>
+        {{/each}}
+        {{/sortList}}
+      </ul>
+    </div>
+    <div class="posts-by-name">
+      <header>
+        <h3>By Restaurant Name</h3>
+      </header>
+      <ul>
+        {{#sortList collections.posts 'attributes.restaurant'}}
+        {{#each .}}
+        <li><a href="{{postUrl slug}}">{{attributes.restaurant}}: {{attributes.title}}</a></li>
+        {{/each}}
+        {{/sortList}}
+      </ul>
+    </div>
+  </article>
+</main>
+{{/page}}

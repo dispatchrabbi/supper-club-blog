@@ -1,0 +1,16 @@
+#page > nav {
+  padding: $base-spacing 0;
+  text-transform: uppercase;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+
+    li {
+      display: inline;
+      padding: 0 1em;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{{#>page}}
+{{> hero }}
+<main>
+  {{#each collections.posts}}
+  {{> excerpt}}
+  {{/each}}
+</main>
+<aside>
+  {{> restaurant-list }}
+</aside>
+{{/page}}
