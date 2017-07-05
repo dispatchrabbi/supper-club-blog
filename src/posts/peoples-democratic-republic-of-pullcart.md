@@ -1,5 +1,6 @@
 ---
 title: People's Democratic Republic of Pullcart
+restaurant: People's Democratic Republic of Pullcart
 date: 2017-06-03
 layout: post.html
 ---

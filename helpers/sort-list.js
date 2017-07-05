@@ -1,6 +1,16 @@
+function plumb(obj, path) {
+  const pathParts = path.split('.');
+  return pathParts.reduce((cur, prop) => (cur == undefined ? undefined : cur[prop]), obj);
+}
+
+function cmp(a, b) {
+  return a < b ? -1 : (b < a ? 1 : 0);
+}
+
 function sortList(list, prop, options) {
-  const sorted = list.sort((a, b) => a - b);
-  return sorted.map(el => options.fn(el)).join('');
+  return list
+    .sort((a, b) => cmp(plumb(a, prop), plumb(b, prop)))
+    .map(el => options.fn(el)).join('');
 }
 
 module.exports = sortList;

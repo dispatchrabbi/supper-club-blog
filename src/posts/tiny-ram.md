@@ -1,5 +1,6 @@
 ---
 title: Tiny Ram
+restaurant: Tiny Ram
 date: 2017-06-02
 layout: post.html
 ---

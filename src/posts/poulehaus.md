@@ -1,5 +1,6 @@
 ---
 title: Poulehaus
+restaurant: Poulehaus
 date: 2017-06-01
 layout: post.html
 ---

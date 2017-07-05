@@ -1,5 +1,5 @@
 ---
 title: Posts
-layout: about.html
+layout: posts.html
 ---
 Post list goes here.
