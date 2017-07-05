@@ -1,0 +1,15 @@
+{{#>page}}
+<main class="no-sidebar">
+  <header>
+    <h2>{{title}}</h2>
+  </header>
+  <article>
+    {{{contents}}}
+    <ul>
+      {{#sortList restaurantsToVisit 'name'}}
+      <li><a href="{{website}}"</a>{{name}}</a></li>
+      {{/sortList}}
+    </ul>
+  </article>
+</main>
+{{/page}}
