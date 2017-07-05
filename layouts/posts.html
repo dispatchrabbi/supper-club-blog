@@ -10,8 +10,10 @@
         <h3>By Date</h3>
       </header>
       <ul>
-        {{#sortList collections.posts 'attributes.date'}}
+        {{#sortList collections.posts 'attributes.date' reverse=true}}
+        {{#each .}}
         <li><a href="{{postUrl slug}}">{{formatDate attributes.date}} - {{attributes.title}}</a></li>
+        {{/each}}
         {{/sortList}}
       </ul>
     </div>
@@ -21,7 +23,9 @@
       </header>
       <ul>
         {{#sortList collections.posts 'attributes.restaurant'}}
+        {{#each .}}
         <li><a href="{{postUrl slug}}">{{attributes.restaurant}}: {{attributes.title}}</a></li>
+        {{/each}}
         {{/sortList}}
       </ul>
     </div>

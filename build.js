@@ -17,7 +17,7 @@ const SRCDIR = './src/';
 const DESTDIR = './dist/';
 
 // TODO: logging/debugging
-async function build() {
+async function build(includeDrafts = false) {
   await clean(DESTDIR);
 
   // Register helpers and partials
@@ -52,7 +52,7 @@ async function build() {
   // Smash layout templates and source pages together to make actual pages
   // And also fancify the URLs so they look nice on the URL bar
   const finalFiles = fancifyUrls(composeSourceAndLayouts({
-    sourceFiles: removeDrafts(sourceFiles),
+    sourceFiles: includeDrafts ? sourceFiles : removeDrafts(sourceFiles),
     layouts,
     metadata,
   }));
@@ -86,4 +86,6 @@ async function build() {
   // });
 }
 
-build();
+build(
+  process.env.INCLUDE_DRAFTS === 'true' // includeDrafts
+);

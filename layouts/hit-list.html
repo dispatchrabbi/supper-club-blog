@@ -7,7 +7,9 @@
     {{{contents}}}
     <ul>
       {{#sortList restaurantsToVisit 'name'}}
+      {{#each .}}
       <li><a href="{{website}}"</a>{{name}}</a></li>
+      {{/each}}
       {{/sortList}}
     </ul>
   </article>

@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "node ./build.js",
+    "build:drafts": "INCLUDE_DRAFTS=true npm run build",
     "watch": "watch 'npm run build' ./src ./layouts",
     "serve": "http-server -a 127.0.0.1 -p 8888 dist",
     "dev": "sh -c 'npm run watch & npm run serve'",

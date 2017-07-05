@@ -8,9 +8,9 @@ function cmp(a, b) {
 }
 
 function sortList(list, prop, options) {
-  return list
-    .sort((a, b) => cmp(plumb(a, prop), plumb(b, prop)))
-    .map(el => options.fn(el)).join('');
+  const reverse = !!options.hash.reverse;
+  const sorted = list.sort((a, b) => ((reverse ? -1 : 1) * cmp(plumb(a, prop), plumb(b, prop))));
+  return options.fn(sorted);
 }
 
 module.exports = sortList;
