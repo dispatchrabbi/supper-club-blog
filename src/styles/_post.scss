@@ -1,5 +1,9 @@
 article {
-  img {
-    width: 100%;
+  p.image-block {
+    text-align: center;
+
+    img {
+      max-width: 100%;
+    }
   }
 }

@@ -13,8 +13,7 @@ Lorem markdownum; neque, viae. **Licet sensura tinnitibus** adoratis diebus: cul
 
 Non tamen, *ut mea* mater cernis excipiunt inmittam *sermone* natura. Me irata Aeoliden munere lumina studii, subiectos, exilio pallet iubeatve *profecto propriaque pro* virum. Linguae cuncta; de neque umquam in caute sustinuit ad talisque silva, mater lassataque moriri, [visum].
 
-![avocado toast]
-Behold the avocado toast.
+![avocado toast] Behold the avocado toast. {.image-block}
 
 - Tulit commemorat labentia ut furtim inmunemque neve: tenues [sensit natat].
 - Haud invecta ferro Pelates uda, numerare gaudetque Procne infelix igne, patientem, est qui, at.
@@ -33,8 +32,7 @@ Pomoque recentis sarisa Capaneusque plenaque dilapsa, causa raptaturque esse, re
 
 > Fecit non *inque rubet*, rogant presso, persequitur dies Hic, cupidine aquatica sunt, patri negat. Dulce fata, uva toxea, quam **illam**: moveret illa? Quis populumque ipsa, pervenit figit vasti, radiis, nec quae? Cypro acceptas somnusque est laboribus oculis levant et fertque!
 
-![smoked fish plate]
-{{#caption}}Fish is *best* when smoked.{{/caption}}
+![smoked fish plate] Fish is *best* when smoked. {.image-block}
 
 Arboris animis obicit, cortice albis tibi, *et est* nitidumque plura tradiderat hae et quique humani. Quale dubita aequaverit tecta reddunt, cum bracchia templa remoraminaque cereris.
 
