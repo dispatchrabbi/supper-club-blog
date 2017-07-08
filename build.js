@@ -46,6 +46,7 @@ async function build(includeDrafts = false) {
     }],
     layouts,
     metadata,
+    includeDrafts,
   });
   Object.assign(metadata, {collections});
 
