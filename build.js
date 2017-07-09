@@ -113,4 +113,8 @@ async function build(srcDir, destDir, options) {
 
 build('./src/', './dist/', {
   includeDrafts: (process.env.INCLUDE_DRAFTS === 'true'),
+}).then(() => { console.log('The build finished without errors!'); }, err => {
+  console.error('There was an error during the build:')
+  console.error(err);
+  process.exit(127);
 });
