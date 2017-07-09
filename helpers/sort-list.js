@@ -8,8 +8,10 @@ function cmp(a, b) {
 }
 
 function sortList(list, prop, options) {
+  const arr = list instanceof Array ? list : Object.values(list);
+
   const reverse = !!options.hash.reverse;
-  const sorted = list.sort((a, b) => ((reverse ? -1 : 1) * cmp(plumb(a, prop), plumb(b, prop))));
+  const sorted = arr.sort((a, b) => ((reverse ? -1 : 1) * cmp(plumb(a, prop), plumb(b, prop))));
   return options.fn(sorted);
 }
 
