@@ -21,12 +21,13 @@ Just run:
 $ npm run build
 ```
 
-This will run a whole bunch of transformations on the files in _src/_ , depositing the built files in _dist/_. The build process is encapsulated in _build.js_, and all the steps have files in _lib/build/_.
+This will run a whole bunch of transformations on the files in _src/_ , depositing the built files in _dist/_. The build process is encapsulated in _build.js_, and with tasks in _lib/build/_ playing support.
 
-You can build the site with drafts using:
+You can build the site with drafts by setting the `INCLUDE_DRAFTS` environment variable to `'true'`. There are a few convenience scripts that do this for you:
 
 ```sh
 $ npm run build:drafts
+$ npm run dev:drafts
 ```
 
 ### Cleaning built files out

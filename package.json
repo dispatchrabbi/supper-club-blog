@@ -9,6 +9,7 @@
     "watch": "watch 'npm run build' ./src ./layouts",
     "serve": "http-server -a 127.0.0.1 -p 8888 dist",
     "dev": "sh -c 'npm run watch & npm run serve'",
+    "dev:drafts": "INCLUDE_DRAFTS=true sh -c 'npm run watch & npm run serve'",
     "clean": "rm -rf ./dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
