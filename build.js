@@ -72,7 +72,7 @@ async function build(srcDir, destDir, options) {
   // Pull out collections from the index and
   // make those collections available in the metadata
   const POSTS_REGEX = /^posts\//;
-  options.metadata.collections = {
+  opts.metadata.collections = {
     posts: curateCollection(fileIndex, path => POSTS_REGEX.test(path)),
   };
 
@@ -81,7 +81,7 @@ async function build(srcDir, destDir, options) {
 
   // Compose the content, layout, and metadata of each file to
   // create the full page HTML
-  mapObject(fileIndex, listing => composeFile(listing, layouts, options.metadata));
+  mapObject(fileIndex, listing => composeFile(listing, layouts, opts.metadata));
 
   // Write those files to the destination directory
   await writeFiles({
