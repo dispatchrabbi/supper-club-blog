@@ -1,10 +1,12 @@
 <div class="post-excerpt">
-  <header>
-    <h2>{{frontMatter.title}}</h2>
-    <h3>{{formatDate frontMatter.date}}</h3>
+  <header class="post-header">
+    <h3 class="post-subtitle">{{formatDate frontMatter.date}} at {{frontMatter.restaurant}}</h3>
+    <a href="{{postUrl slug}}"><h2 class="post-title">{{frontMatter.title}}</h2></a>
   </header>
-  <article>{{excerpt htmlContent}}</article>
-  <div class="read-more">
+  <article>
+    <p>{{#if frontMatter.teaser}}{{frontMatter.teaser}}{{else}}{{excerpt htmlContent}}{{/if}} <a href="{{postUrl slug}}">Read more »</a></p>
+  </article>
+  <!-- <div class="read-more">
     <a href="{{postUrl slug}}">Continue reading</a>
-  </div>
+  </div> -->
 </div>

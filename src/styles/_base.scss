@@ -1,17 +1,21 @@
+* {
+  // A saner day for everyone
+  box-sizing: border-box;
+}
+
 body {
   font-family: $body-font;
-
   background-color: $black;
   color: $white;
 }
 
 header {
   font-family: $header-font;
-  font-weight: bold;
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0 0 modular-scale(-5) 0;
+  font-weight: normal;
 
   &:last-child {
     margin: 0;

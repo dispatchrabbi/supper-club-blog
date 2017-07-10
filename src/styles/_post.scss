@@ -1,9 +1,27 @@
+main {
+  .post-image {
+    margin-top: $base-spacing;
+    img {
+     width: 100%;
+   }
+  }
+
+  .post-subtitle {
+    text-transform: uppercase;
+    font-size: modular-scale(0);
+  }
+
+  .post-title {
+    font-size: modular-scale(4);
+  }
+}
+
 article {
   p.image-block {
     text-align: center;
 
     img {
-      max-width: 100%;
+      width: 100%;
     }
   }
 }

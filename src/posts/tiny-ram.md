@@ -1,8 +1,9 @@
 ---
 title: Tiny Ram
 restaurant: Tiny Ram
-date: 2017-06-02
+date: 2017-06-04
 layout: post.html
+cover: https://lh3.googleusercontent.com/JW-URVg9CZi65WYa7vugyvYZ-lyQsUIVG-Btyumu4mPE-1o483nlQ3wH2JybjTp0Vds8GNZI91dDfMB6YWjv4X6isl5dP933AqW62Mne5QgMHJFPIMg668EQHwtWEjGQ2vclaQ3Itp-sDgfu_94YjtD5-n9gUTiN0pIdP30z5a5G-pw9s5qKxCpg0D0kgDuqzZOaDQAWHOwCXc30C5r79bWm7nIwHhU_uIu3qOwLHBDzoUwXTs9CpeW3Mg88NXZ_rOWOox8SiKicwqIjdMn4TMsuhdNTDPEJmZREqVDaeKuCGqpc1hb4YUa28-tKQW9Oe5m7FygCf9obbsbMxs-MCSiqMEeVb9lcrJ6zGev9hzPor-opbOtEBtM6N5KLTaJvh3NDOnO8zj-2XGyO5C-9B3raMTk0kAZbse7FH18mvZxKwl3hhbjp8AvL-PsSRBldKoF3MsnYn3VPJ8HkjvYehhQklOXHjNWcVP_Ova7qbIE7iTV9oOKmUgA0N4-hJZTyw-ALJ_Ki0fOgrix48kplzHuOx0YBRak16UCuzHfL7cRCUq-iG6U8gJAEtBLYN2tOkyBHrYaU2bOrvNLVzuAXpG8gwBrhecmu50HyENriLxuawD8efcHv=w1966-h1474-no
 ---
 Lorem markdownum rupes inexspectatus retro pectora robora, ille opus certa si exstinctaque vidit boum forte isto mea glaebaque! Quodsi saepe ita nullius, verum satis decerptas quattuor ferunt. Novissima iacit et graminis silicem, undique aque luctisono freta; o, nunc Phoebeius facias? Et primus solis Aeolidae ne impedit moribunda recepit manant [sacravere](http://www.forma-in.com/) ad. Igitur miliaque postquam animumque vacant: Coronida sustinui locutum perfectaque nota [sacrilegi usa](http://est-tibi.com/), illa erat futuri ortu?
 

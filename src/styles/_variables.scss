@@ -1,5 +1,24 @@
+// Breakpoints
+$tiny-screen: 320px;
+$medium-screen: 768px;
+$large-screen: 1440px;
+
 // Layout defaults
-$base-spacing: modular-scale(-1);
+$base-spacing: modular-scale(0);
+$big-spacing: modular-scale(2);
+
+$desktop-grid: (
+  columns: 12,
+  gutter: $base-spacing * 2,
+  media: "(min-width: $medium-screen)",
+);
+
+$mobile-grid: (
+  columns: 12,
+  gutter: $base-spacing * 2,
+);
+
+$neat-grid: $mobile-grid;
 
 // Colors
 $black: hsl(0, 0%, 8%);
@@ -9,5 +28,6 @@ $pale-horse: hsl(40, 18%, 73%);
 $vintage-black: hsl(0, 0%, 23%);
 
 // Fonts
-$header-font: 'Playfair Display', 'Georgia', serif;
+$title-font: 'Playball', 'Georgia', serif;
+$header-font: 'Bellefair', 'Georgia', serif;
 $body-font: 'Alegreya', 'Times New Roman', serif;

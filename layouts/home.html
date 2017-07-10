@@ -1,11 +1,15 @@
 {{#>page}}
-{{> hero }}
-<main>
+{{> hero (getMostRecent collections.posts) }}
+
+{{#> content sidebar=true}}
   {{#each collections.posts}}
   {{> excerpt}}
   {{/each}}
-</main>
-<aside>
-  {{> restaurant-list }}
-</aside>
+{{/content}}
+
+{{#> sidebar}}
+  <section>
+    {{> restaurant-list }}
+  </section>
+{{/sidebar}}
 {{/page}}

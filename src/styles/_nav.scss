@@ -1,6 +1,9 @@
-#page > nav {
+nav {
   padding: $base-spacing 0;
+  margin-bottom: $base-spacing;
   text-transform: uppercase;
+
+  border-bottom: 1px solid $white;
 
   ul {
     margin: 0;

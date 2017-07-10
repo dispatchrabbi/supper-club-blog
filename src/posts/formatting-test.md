@@ -1,10 +1,10 @@
 ---
 title: Formatting Test
 restaurant: Kitchen
-date: 1970-01-02
+date: 2017-06-03
 layout: post.html
 cover: https://lh3.googleusercontent.com/5vX8WZWC4YkunxIgdpAPMfREWGo4MDlF1DD2VGMbrC233xSnKNKOKb_pcFzIs9A3nnAQIkmleXaFN9EM8t-Ls0EpUgmclUyeys9BTd4CFbeAI9dTA4devtqVgtBiOUXkAUz8L56cuUas_RHJahPfk4bF4_hhajVPYdMcGAI1zGpfX8kFqG3ed4ewx1UvgGcvV3YudwQYgDmSeP3q7WmgXWSesrIUXcOUoyJtGQ8BwPvlWEEL9YZWz54THEmZOsWJExre2Pr3oYBwa4Gf45MryOf5QNbrr6rLyThwDbzZD1MB1kP9ecGVZlkvm3QNlE-gZBwEXrFd-2VQ_0qyehux-oVAY02fkQwMXb9j9FUQIeBuXVLfCvvk0bLWty0ZFhj6KwO65kNIrq7FIucwgWGv0i-bWp3C2f1up9gN_wekcEZqjbYbnER6_YPymvCWtuvA9DDJLsXyfneayrss0m3XwuFi5YWxwUBjd_smRFq-JjZz3nYCeXDnl18JdVJXotIr_35l6Z9bnsdnUbRL0GZ6OyH1mPuN3JkmVSTSnvNBBb4n5Ynd4btbjLKmgMjnhkKk7MrtpPJ_gPu79tB2ZHkPgrwjgFvGn0tm1wKKD_Tn2ZlAdNi_TPJr=w1966-h1474-no
-draft: true
+teaser: You ever want to test a thing to make sure it's working? I sure did, and that's how I ended up here.
 ---
 
 Lorem markdownum; neque, viae. **Licet sensura tinnitibus** adoratis diebus: culpavi caestibus atque.
