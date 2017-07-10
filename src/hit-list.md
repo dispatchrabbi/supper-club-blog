@@ -1,5 +1,5 @@
 ---
-title: Hit list
+title: Hit List
 layout: hit-list.html
 ---
 These are the restaurants we want to visit. It'll take time, but we'll get there.

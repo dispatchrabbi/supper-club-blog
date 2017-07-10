@@ -1,0 +1,28 @@
+#page-hero {
+  @include grid-column(12);
+  position: relative;
+  margin-top: $base-spacing;
+  margin-bottom: $big-spacing;
+  max-height: 400px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+  }
+
+  header {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: $base-spacing;
+    background: fade-out($black, 1/3);
+
+    .hero-title {
+      font-size: modular-scale(3);
+    }
+    .hero-subtitle {
+      font-size: modular-scale(0);
+      text-transform: uppercase;
+    }
+  }
+}

@@ -1,14 +1,20 @@
-{{#>page}}
-<main>
-  <header>
-    <h2>{{title}}</h2>
-    <h3>{{formatDate date}}</h3>
-  </header>
-  <article>
-    {{{ contents }}}
-  </article>
-</main>
-<aside>
-  {{> restaurant-list }}
-</aside>
+{{#>page sidebar="true"}}
+{{#> content sidebar=true}}
+<header class="post-header">
+  <h3 class="post-subtitle">{{formatDate date}} at {{restaurant}}</h3>
+  <h2 class="post-title">{{title}}</h2>
+</header>
+<div class="post-image">
+  <img src="{{cover}}" />
+</div>
+<article class="post-contents">
+  {{{ contents }}}
+</article>
+{{/content}}
+
+{{#> sidebar}}
+  <section>
+    <p>Probably some things about the restaurant or whatever here...</p>
+  </section>
+{{/sidebar}}
 {{/page}}

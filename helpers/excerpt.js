@@ -1,13 +1,10 @@
 const Handlebars = require('handlebars');
 
-function excerpt(paragraphs) {
-  const pStr = paragraphs.toString();
-
-  // This is a super-cheap way to do this. Woo!
-  const pEnd = '</p>';
-  const endOfFirstParagraph = pStr.indexOf(pEnd) + pEnd.length;
-
-  return new Handlebars.SafeString(pStr.substr(0, endOfFirstParagraph));
+const P_REGEX = /<p>(.*?)<\/p>/;
+function excerpt(postContent) {
+  const matches = P_REGEX.exec(postContent);
+  const excerpt = matches[1] || '';
+  return new Handlebars.SafeString(excerpt);
 }
 
 module.exports = excerpt;

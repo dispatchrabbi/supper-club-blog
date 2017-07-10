@@ -50,7 +50,7 @@ This will watch the _src/_ and _layouts/_ directories (`npm run watch`) and run 
 
 ## Writing blog posts
 
-...We'll figure out the specifics later, but it's going to involve putting a Markdown file in _src/posts/_ and putting the right metadata in the front-matter. You'll want the file to look something like this:
+You're going to want to put a Markdown file in _src/posts/_ and putting the right metadata in the front-matter. You'll want the file to look something like this:
 
 ```markdown
 ---
@@ -64,4 +64,14 @@ This restaurant was *awesome*. Let me tell you just how awesome it was.
 ```
 (_src/posts/sarkis.md_)
 
-To publish the post, remove `draft: true` from the front-matter.
+Here are the available options for the front-matter:
+
+| Key | Required? | Description | Example |
+|-----|-----------|-------------|---------|
+| title | Yes | The title of the blog post | `title: Loretta Believe It!` |
+| restaurant | Yes | Which restaurant the post is about | `restaurant: Sarkis` |
+| date | Yes | The date of the visit (in `YYYY-MM-DD` format) | `date: 2017-05-15` |
+| cover | No | A link to the cover photo to use for the post | `cover: https://i.imgur.com/path/to/an/image.png` |
+| teaser | No | The text to use when summarizing the post (on the front page, for example) | `teaser: Ever wanted to know what a real greasy spoon is like? Sarkis is the place to go.` |
+| draft | No | Whether the post is a draft (and therefore shouldn't be published) | `draft: true` |
+| layout | Yes | Which layout to use. For blog posts, always `post.html`. | `layout: post.html` |

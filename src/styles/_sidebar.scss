@@ -1,0 +1,12 @@
+#page-sidebar {
+  // Looking for sidebar width? It's in _page.scss.
+
+  section:not(:last-child) {
+    border-bottom: 1px solid $white;
+  }
+}
+
+.restaurant-list ul {
+  list-style: none;
+  padding: 0;
+}
