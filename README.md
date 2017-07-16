@@ -50,7 +50,17 @@ This will watch the _src/_ and _layouts/_ directories (`npm run watch`) and run 
 
 ## Writing blog posts
 
-You're going to want to put a Markdown file in _src/posts/_ and putting the right metadata in the front-matter. You'll want the file to look something like this:
+### The easy way
+
+There's an npm script for this, because of course there is. Just run:
+
+```sh
+$ npm run post
+```
+
+### By hand
+
+What you're gonna want to do is put a Markdown file in _src/posts/_ and put the right metadata in the front-matter. You'll want the file to look something like this:
 
 ```markdown
 ---

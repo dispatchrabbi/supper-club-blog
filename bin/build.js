@@ -2,27 +2,27 @@ const path = require('path');
 const del = require('del');
 const Handlebars = require('handlebars');
 
-const collectAndProcessFiles = require('./lib/build/collect-and-process-files.js');
-const mapObject = require('./lib/map-object.js');
+const collectAndProcessFiles = require('../lib/build/collect-and-process-files.js');
+const mapObject = require('../lib/map-object.js');
 
-const prepHandlebars = require('./lib/build/prep-handlebars.js');
-const demarkdownifyFile = require('./lib/build/demarkdownify-file.js');
-const removeDrafts = require('./lib/build/remove-drafts.js');
-const curateCollection = require('./lib/build/curate-collection.js');
-const composeFile = require('./lib/build/compose-file.js');
-const writeFiles = require('./lib/build/write-files.js');
-const compileStyles = require('./lib/build/compile-styles.js');
-const copyOtherFiles = require('./lib/build/copy-other-files.js');
+const prepHandlebars = require('../lib/build/prep-handlebars.js');
+const demarkdownifyFile = require('../lib/build/demarkdownify-file.js');
+const removeDrafts = require('../lib/build/remove-drafts.js');
+const curateCollection = require('../lib/build/curate-collection.js');
+const composeFile = require('../lib/build/compose-file.js');
+const writeFiles = require('../lib/build/write-files.js');
+const compileStyles = require('../lib/build/compile-styles.js');
+const copyOtherFiles = require('../lib/build/copy-other-files.js');
 
 // TODO: logging, debugging, allow handlebar stuff in the markdown
 // Note to future self: allowing handlebar stuff means breaking apart demarkdownify
 
 DEFAULT_OPTIONS = {
   includeDrafts: false,
-  helpers: require('./helpers/helpers.js'),
+  helpers: require('../helpers/helpers.js'),
   partialsDir: './partials/',
   layoutsDir: './layouts/',
-  metadata: require('./metadata/metadata.js'),
+  metadata: require('../metadata/metadata.js'),
 };
 
 async function build(srcDir, destDir, options) {
