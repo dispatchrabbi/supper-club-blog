@@ -11,6 +11,8 @@ $ cd supper-club-blog
 $ npm install
 ```
 
+You'll also need to copy _.env.example_ to _.env_ (which should never be committed), and put a Google Maps API key in that file.
+
 And you should be good to go!
 
 ## Building the site

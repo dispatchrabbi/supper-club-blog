@@ -1,5 +1,5 @@
-{{#>page sidebar="true"}}
-{{#> content sidebar=true}}
+{{#>page sidebar=true}}
+{{#>content sidebar=true}}
 <header class="post-header">
   <h3 class="post-subtitle">{{formatDate date}} at {{restaurant}}</h3>
   <h2 class="post-title">{{title}}</h2>
@@ -12,9 +12,11 @@
 </article>
 {{/content}}
 
-{{#> sidebar}}
+{{#>sidebar}}
+  {{#findRestaurant restaurantsToVisit restaurant}}
   <section>
-    <p>Probably some things about the restaurant or whatever here...</p>
+    {{>restaurant-info}}
   </section>
+  {{/findRestaurant}}
 {{/sidebar}}
 {{/page}}

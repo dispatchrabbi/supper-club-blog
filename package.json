@@ -29,6 +29,7 @@
     "bourbon-neat": "^2.0.0",
     "cpy": "^5.0.0",
     "del": "^3.0.0",
+    "dotenv": "^4.0.0",
     "front-matter": "^2.1.2",
     "globby": "^6.1.0",
     "handlebars": "^4.0.10",

@@ -1,3 +1,6 @@
+// Import environment variables from .env for local testing
+const dotenv = require('dotenv').config();
+
 const path = require('path');
 const del = require('del');
 const Handlebars = require('handlebars');
