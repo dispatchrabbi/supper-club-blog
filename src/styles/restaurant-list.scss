@@ -1,0 +1,17 @@
+.restaurant-list {
+  clear: both;
+
+  & > ul {
+    padding: 0;
+  }
+
+  & > ul > li {
+    list-style: none;
+    padding: $base-spacing 0;
+    border-top: 1px solid $vintage-black;
+
+    &:first-child {
+      border-top: none;
+    }
+  }
+}

@@ -112,13 +112,11 @@ async function build(srcDir, destDir, options) {
     files: styleFiles
   });
 
-  // Copy any remaining files from the source directory to the destination directory
-  // (We have no other files we need to copy... yet.)
-  // await copyOtherFiles({
-  //   sourceDir: ['images/'].map(dir => srcDir + dir),
-  //   exclude: [],
-  //   destinationDir: destDir,
-  // });
+  // Copy scripts into the destination directory
+  await copyOtherFiles({
+    sourceDir: srcDir + 'scripts/',
+    destinationDir: destDir + 'scripts/',
+  });
 
 }
 

@@ -1,0 +1,68 @@
+{{#>page}}
+{{#>content}}
+<header>
+  <h2>{{title}}</h2>
+</header>
+<article>
+  {{{contents}}}
+  <section>
+    Sort the reviews by <span class="review-sort-option active" data-sort-by="date">date</span>, <span class="review-sort-option" data-sort-by="restaurant">restaurant</span>, or <span class="review-sort-option" data-sort-by="title">post title</span>.
+    <div class="restaurant-list reviews-list" data-sorted-by="date">
+      <ul>
+        {{#sortList collections.posts 'frontMatter.date' reverse=true}}
+        {{#each .}}
+        <li>
+          <header><h3 class="review-title"><a href="{{postUrl slug}}">{{frontMatter.title}}</a></h3></header>
+          <div class="review-info">{{formatDate frontMatter.date}} at {{frontMatter.restaurant}}</div>
+        </li>
+        {{/each}}
+        {{/sortList}}
+      </ul>
+    </div>
+    <div class="restaurant-list reviews-list" data-sorted-by="restaurant">
+      <ul>
+        {{#sortList collections.posts 'frontMatter.restaurant'}}
+        {{#each .}}
+        <li>
+          <header><h3 class="review-title"><a href="{{postUrl slug}}">{{frontMatter.title}}</a></h3></header>
+          <div class="review-info">{{formatDate frontMatter.date}} at {{frontMatter.restaurant}}</div>
+        </li>
+        {{/each}}
+        {{/sortList}}
+      </ul>
+    </div>
+    <div class="restaurant-list reviews-list" data-sorted-by="title">
+      <ul>
+        {{#sortList collections.posts 'frontMatter.title'}}
+        {{#each .}}
+        <li>
+          <header><h3 class="review-title"><a href="{{postUrl slug}}">{{frontMatter.title}}</a></h3></header>
+          <div class="review-info">{{formatDate frontMatter.date}} at {{frontMatter.restaurant}}</div>
+        </li>
+        {{/each}}
+        {{/sortList}}
+      </ul>
+    </div>
+  </section>
+  <section id="reviews-to-come">
+    <header>
+      <h2>Reviews to come</h2>
+    </header>
+    <div class="restaurant-list">
+      <ul>
+        {{#unreviewedRestaurants restaurants}}
+        {{#sortList . 'name'}}
+        {{#each .}}
+        <li>
+          <div>{{name}}</div>
+        </li>
+        {{/each}}
+        {{/sortList}}
+        {{/unreviewedRestaurants}}
+      </ul>
+    </div>
+  </section>
+  <script src="/scripts/review-sorter.js" defer></script>
+</article>
+{{/content}}
+{{/page}}

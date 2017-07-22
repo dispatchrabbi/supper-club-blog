@@ -1,5 +1,4 @@
 ---
-title: Posts
-layout: posts.html
+layout: redirect.html
+redirect: /reviews
 ---
-Post list goes here.

@@ -1,0 +1,22 @@
+#page article {
+  .review-sort-option {
+    font-family: $header-font;
+    text-transform: uppercase;
+
+    &.active {
+      color: $gold;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: $gold;
+    }
+  }
+
+  .reviews-list[data-sorted-by] {
+    display: none;
+  }
+  @each $sort in date, title, restaurant {
+    .review-sort-option[data-sort-by="#{$sort}"].active ~ .reviews-list[data-sorted-by="#{$sort}"] { display: block; }
+  }
+}

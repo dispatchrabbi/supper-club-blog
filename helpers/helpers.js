@@ -12,6 +12,7 @@ const helpers = {
   mapsApiKey: require('./maps-api-key.js'),
   postUrl: require('./post-url.js'),
   sortList: require('./sort-list.js'),
+  unreviewedRestaurants: require('./unreviewed-restaurants.js'),
   unvisitedRestaurants: require('./unvisited-restaurants.js'),
 };
 
