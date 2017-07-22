@@ -4,9 +4,21 @@
   section:not(:last-child) {
     border-bottom: 1px solid $white;
   }
-}
 
-.restaurant-list ul {
-  list-style: none;
-  padding: 0;
+  .restaurant-list ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .restaurant-info {
+    .restaurant-address {
+      white-space: pre-line;
+    }
+
+    .restaurant-map iframe {
+      border: 0;
+      width: 100%;
+      min-height: 12em;
+    }
+  }
 }
