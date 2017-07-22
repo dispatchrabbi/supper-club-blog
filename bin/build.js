@@ -9,6 +9,7 @@ const collectAndProcessFiles = require('../lib/build/collect-and-process-files.j
 const mapObject = require('../lib/map-object.js');
 
 const prepHandlebars = require('../lib/build/prep-handlebars.js');
+const fetchRestaurantsFromTrello = require('../lib/build/fetch-restaurants-from-trello.js');
 const demarkdownifyFile = require('../lib/build/demarkdownify-file.js');
 const removeDrafts = require('../lib/build/remove-drafts.js');
 const curateCollection = require('../lib/build/curate-collection.js');
@@ -38,6 +39,13 @@ async function build(srcDir, destDir, options) {
   prepHandlebars({
     helpers: opts.helpers,
     partials: await collectAndProcessFiles('*.html', opts.partialsDir),
+  });
+
+  // Fetch restaurants from Trello (and write them out as a debugging tool)
+  opts.metadata.restaurants = await fetchRestaurantsFromTrello();
+  await writeFiles({
+    destinationDir: destDir,
+    files: { 'restaurants.json': JSON.stringify(opts.metadata.restaurants) },
   });
 
   // Create an index of files to process
