@@ -1,7 +1,8 @@
 // Breakpoints
-$tiny-screen: 320px;
-$medium-screen: 768px;
-$large-screen: 1440px;
+// all 1px higher than they should be, because we're using min-width
+$tiny-screen: 426px; // 425px + 1
+$medium-screen: 769px; // 768px + 1
+$large-screen: 1441px; // 1441px + 1
 
 // Layout defaults
 $base-spacing: modular-scale(0);
@@ -11,6 +12,12 @@ $desktop-grid: (
   columns: 12,
   gutter: $base-spacing * 2,
   media: "(min-width: $medium-screen)",
+);
+
+$tablet-grid: (
+  columns: 12,
+  gutter: $base-spacing * 2,
+  media: "(min-width: $tiny-screen)",
 );
 
 $mobile-grid: (

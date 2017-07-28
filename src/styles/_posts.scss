@@ -1,6 +1,0 @@
-#page article {
-  & > .posts-by-date,
-  & > .posts-by-name {
-    @include grid-column(6);
-  }
-}

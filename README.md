@@ -1,6 +1,21 @@
 # Supper Club Blog
 https://supperclub.report
 
+## tl;dr
+
+```sh
+$ git clone git@github.com:dispatchrabbi/supper-club-blog.git
+$ cd supper-club-blog
+$ npm install
+$ cp ./env.example ./env
+# Add Google Maps and Trello info to .env
+
+$ npm run build # build the site
+$ npm run dev # develop on the site
+$ npm run update:restaurants # update the restaurant list
+$ npm run post # create a new post
+```
+
 ## Getting started
 
 This is a static site built using Node. (And all the build steps are homegrown!) That means we're doing pretty standard Node-y stuff to get up and running.
@@ -12,9 +27,11 @@ $ npm install
 ```
 
 ### API Keys
-There are three environment variables you'll need to set in order to run the build, and they go in _.env_. So first, copy _.env.example_ to _.env_ (which should never be committed).
+There are three environment variables you'll need to set in order to run the build, and they go in _.env_.
 
-Next, visit [the Google Maps Embed API key-getting page](https://developers.google.com/maps/documentation/embed/get-api-key) and click *Get A Key*. As that page suggests, you'll probably want to lock this key down by restricting it to HTTP referrers matching `localhost/*`. Enter that API key in _.env_ for `MAPS_API_KEY`.
+First, copy _.env.example_ to _.env_. _.env_ has secret information in it, so it should never be committed.
+
+Next, visit [the Google Maps Embed API key-getting page](https://developers.google.com/maps/documentation/embed/get-api-key) and click **Get A Key**. As that page suggests, you'll probably want to lock this key down by restricting it to HTTP referrers matching `localhost/*`. Enter that API key in _.env_ for `MAPS_API_KEY`.
 
 Then, visit <https://trello.com/app-key> to find your Trello API Key. Add that key to _.env_ for `TRELLO_API_KEY`. Then substitute your key into `https://trello.com/1/authorize?expiration=never&scope=read&response_type=token&name=Server%20Token&key=YOUR KEY HERE` and go to that page in a browser. Authorize the granting of the server token. Once the authorization is approved, the page will show you a token. Enter that token in _.env_ for `TRELLO_TOKEN`.
 
@@ -30,13 +47,32 @@ Just run:
 $ npm run build
 ```
 
-This will run a whole bunch of transformations on the files in _src/_ , depositing the built files in _dist/_. The build process is encapsulated in _build.js_, and with tasks in _lib/build/_ playing support.
+This will update the list of restaurants from Trello, and then run a whole bunch of transformations on the files in _src/_ , depositing the built files in _dist/_. The build process is encapsulated in _build.js_, and with tasks in _lib/build/_ playing support.
+
+If you just want to do the site-building bit:
+
+```sh
+$ npm run build:site
+```
 
 You can build the site with drafts by setting the `INCLUDE_DRAFTS` environment variable to `'true'`. There are a few convenience scripts that do this for you:
 
 ```sh
 $ npm run build:drafts
 $ npm run dev:drafts
+```
+
+### Updating the restaurant list
+
+To update the list of restaurants from the Trello, run:
+```sh
+$ npm run update:restaurants
+```
+
+This will update the list of restaurants if there have been any changes to the Trello board since the last update. If you want to force an update:
+
+```sh
+$ FORCE=true npm run update:restaurants
 ```
 
 ### Cleaning built files out

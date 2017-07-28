@@ -5,15 +5,17 @@
 </header>
 <article>
   {{{contents}}}
-  <ul>
-    {{#unvisitedRestaurants restaurants}}
-    {{#sortList . 'name'}}
-    {{#each .}}
-    <li><a href="{{website}}"</a>{{name}}</a></li>
-    {{/each}}
-    {{/sortList}}
-    {{/unvisitedRestaurants}}
-  </ul>
+  <div class="restaurant-list">
+    <ul>
+      {{#unvisitedRestaurants restaurants}}
+      {{#sortList . 'name'}}
+      {{#each .}}
+      <li><a href="{{formatWebsite website}}"</a>{{name}}</a></li>
+      {{/each}}
+      {{/sortList}}
+      {{/unvisitedRestaurants}}
+    </ul>
+  </div>
 </article>
 {{/content}}
 {{/page}}
