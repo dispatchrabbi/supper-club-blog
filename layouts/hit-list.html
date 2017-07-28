@@ -6,11 +6,13 @@
 <article>
   {{{contents}}}
   <ul>
-    {{#sortList restaurantsToVisit 'name'}}
+    {{#unvisitedRestaurants restaurants}}
+    {{#sortList . 'name'}}
     {{#each .}}
     <li><a href="{{website}}"</a>{{name}}</a></li>
     {{/each}}
     {{/sortList}}
+    {{/unvisitedRestaurants}}
   </ul>
 </article>
 {{/content}}

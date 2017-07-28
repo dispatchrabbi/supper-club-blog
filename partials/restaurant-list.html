@@ -3,8 +3,10 @@
     <h2>The Hit List</h2>
   </header>
   <ul>
-    {{#each restaurantsToVisit}}
+    {{#unvisitedRestaurants restaurants}}
+    {{#each .}}
     <li><a href="{{website}}">{{name}}</a></li>
     {{/each}}
+    {{/unvisitedRestaurants}}
   </ul>
 <div>
