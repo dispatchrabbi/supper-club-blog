@@ -1,5 +1,5 @@
 // Import environment variables from .env for local testing
-const dotenv = require('dotenv').config();
+require('dotenv').config();
 
 const path = require('path');
 const del = require('del');
@@ -17,15 +17,18 @@ const writeFiles = require('../lib/build/write-files.js');
 const compileStyles = require('../lib/build/compile-styles.js');
 const copyOtherFiles = require('../lib/build/copy-other-files.js');
 
+const helpers = require('../helpers/helpers.js');
+const metadata = require('../metadata/metadata.js');
+
 // TODO: logging, debugging, allow handlebar stuff in the markdown
 // Note to future self: allowing handlebar stuff means breaking apart demarkdownify
 
-DEFAULT_OPTIONS = {
+const DEFAULT_OPTIONS = {
   includeDrafts: false,
-  helpers: require('../helpers/helpers.js'),
+  helpers,
   partialsDir: './partials/',
   layoutsDir: './layouts/',
-  metadata: require('../metadata/metadata.js'),
+  metadata,
 };
 
 async function build(srcDir, destDir, options) {
@@ -57,7 +60,8 @@ async function build(srcDir, destDir, options) {
   });
 
   // Prettify all the file URLs (except index.html, which is already pretty)
-  mapObject(fileIndex, listing => {
+  mapObject(fileIndex, (listing) => {
+    // eslint-disable-next-line no-param-reassign
     listing.dstPath = listing.dstPath === 'index.html' ?
       listing.dstPath :
       listing.dstPath.replace('.html', '/index.html');
@@ -65,10 +69,10 @@ async function build(srcDir, destDir, options) {
   });
 
   // Process the front-matter of those files and convert the content to HTML
-  mapObject(fileIndex, (listing, path) => demarkdownifyFile(listing));
+  mapObject(fileIndex, listing => demarkdownifyFile(listing));
 
   // Remove drafts from the index
-  if(!opts.includeDrafts) {
+  if (!opts.includeDrafts) {
     removeDrafts(fileIndex);
   }
 
@@ -76,11 +80,15 @@ async function build(srcDir, destDir, options) {
   // make those collections available in the metadata
   const POSTS_REGEX = /^posts\//;
   opts.metadata.collections = {
-    posts: curateCollection(fileIndex, path => POSTS_REGEX.test(path)),
+    posts: curateCollection(fileIndex, filePath => POSTS_REGEX.test(filePath)),
   };
 
   // Compile layout templates
-  const layouts = await collectAndProcessFiles('*.html', opts.layoutsDir, (content, filepath) => Handlebars.compile(content))
+  const layouts = await collectAndProcessFiles(
+    '*.html',
+    opts.layoutsDir,
+    content => Handlebars.compile(content)
+  );
 
   // Compose the content, layout, and metadata of each file to
   // create the full page HTML
@@ -89,7 +97,10 @@ async function build(srcDir, destDir, options) {
   // Write those files to the destination directory
   await writeFiles({
     destinationDir: destDir,
-    files: Object.values(fileIndex).reduce((obj, listing) => (obj[listing.dstPath] = listing.pageContent, obj), {}),
+    files: Object.values(fileIndex).reduce((obj, listing) => {
+      obj[listing.dstPath] = listing.pageContent; // eslint-disable-line no-param-reassign
+      return obj;
+    }, {}),
   });
 
   // Compile styles from the source directory...
@@ -109,13 +120,12 @@ async function build(srcDir, destDir, options) {
     sourceDir: srcDir + 'scripts/',
     destinationDir: destDir + 'scripts/',
   });
-
 }
 
 build('./src/', './dist/', {
   includeDrafts: (process.env.INCLUDE_DRAFTS === 'true'),
-}).then(() => { console.log('The build finished without errors!'); }, err => {
-  console.error('There was an error during the build:')
+}).then(() => { console.log('The build finished without errors!'); }, (err) => {
+  console.error('There was an error during the build:');
   console.error(err);
   process.exit(127);
 });

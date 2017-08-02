@@ -11,6 +11,7 @@ $ cp ./env.example ./env
 # Add Google Maps and Trello info to .env
 
 $ npm run build # build the site
+$ npm run lint # lint the code
 $ npm run dev # develop on the site
 $ npm run update:restaurants # update the restaurant list
 $ npm run post # create a new post
@@ -92,6 +93,16 @@ $ npm run dev
 ```
 
 This will watch the _src/_ and _layouts/_ directories (`npm run watch`) and run a build when anything changes. It will also simultaneously set up a web server (`npm run serve`) at <http://localhost:8888> that serves out of _dist/_ so you can see your changes.
+
+### Linting
+
+You should be linting! Why aren't you linting?
+
+```sh
+$ npm run lint
+```
+
+Building the site will run the linter.
 
 ## Writing blog posts
 

@@ -2,7 +2,7 @@ const cmp = require('../lib/cmp.js');
 
 function plumb(obj, path) {
   const pathParts = path.split('.');
-  return pathParts.reduce((cur, prop) => (cur == undefined ? undefined : cur[prop]), obj);
+  return pathParts.reduce((cur, prop) => (cur === undefined ? undefined : cur[prop]), obj);
 }
 
 function sortList(list, prop, options) {

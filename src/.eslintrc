@@ -1,0 +1,12 @@
+{
+  "env": {
+    "browser": true,
+    "jquery": true,
+  },
+  "rules": {
+    // Requiring arrow callbacks would mean we'd have to transpile... and we're not going to transpile.
+    "prefer-arrow-callback": ["error", {
+      "allowNamedFunctions": true,
+    }],
+  },
+}

@@ -23,7 +23,7 @@ async function askForPostInfo() {
       name: 'date',
       message: 'Visit date [YYYY-MM-DD]:',
       // only validate if an answer was given
-      validate: val => (val ? (moment(val, 'YYYY-MM-DD').isValid() || 'Use YYYY-MM-DD, yo.') :  true),
+      validate: val => (val ? (moment(val, 'YYYY-MM-DD').isValid() || 'Use YYYY-MM-DD, yo.') : true),
       default: () => (answers.date || undefined),
     },
     {
@@ -51,10 +51,11 @@ async function askForPostInfo() {
   let looksGood = false;
 
   console.log('First, tell me some things about your new post!', '');
-  while(!looksGood) {
+  /* eslint-disable no-await-in-loop */
+  while (!looksGood) {
     Object.assign(
       answers,
-      await inquirer.prompt(QUESTIONS),
+      await inquirer.prompt(QUESTIONS)
     );
 
     console.log(`
@@ -66,9 +67,10 @@ Cover photo URL: ${answers.cover || '(none given)'}
 
     looksGood = (await inquirer.prompt(CONFIRM)).looksGood;
   }
+  /* eslint-enable no-await-in-loop */
 
   return answers;
-};
+}
 
 async function writeNewPostFile(answers) {
   const contents = `---
